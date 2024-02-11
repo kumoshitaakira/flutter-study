@@ -19,6 +19,13 @@ class StatelessPage extends StatelessWidget {
               onPressed: () => context.goNamed('Stateful'),
               child: const Text('StatefulPage →'),
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () => context.goNamed('Riverpod'),
+              child: const Text('RiverpodPage →'),
+            ),
           ],
         ),
       ),

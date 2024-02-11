@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 enum BottomNavBarItem {
   home,
-  prd,
+  rpd,
 }
 
 class BottomTabBar extends StatelessWidget {
@@ -24,12 +24,13 @@ class BottomTabBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.home_outlined),
+            activeIcon: const Icon(Icons.home),
             label: BottomNavBarItem.home.name,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
-            label: BottomNavBarItem.prd.name,
+            icon: const Icon(Icons.home_max),
+            label: BottomNavBarItem.rpd.name,
           ),
         ],
         onTap: (index) => navigationShell.goBranch(
@@ -38,7 +39,6 @@ class BottomTabBar extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        top: false,
         child: Stack(
           children: [
             Visibility(
@@ -48,8 +48,8 @@ class BottomTabBar extends StatelessWidget {
             ),
             Visibility(
               visible:
-                  navigationShell.currentIndex == BottomNavBarItem.prd.index,
-              child: children[BottomNavBarItem.prd.index],
+                  navigationShell.currentIndex == BottomNavBarItem.rpd.index,
+              child: children[BottomNavBarItem.rpd.index],
             ),
           ],
         ),

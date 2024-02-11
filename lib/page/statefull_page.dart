@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class StatefullPage extends StatefulWidget {
   const StatefullPage({super.key});
@@ -64,6 +65,13 @@ class _StatefullPageState extends State<StatefullPage> {
                   child: const Text('Reset'),
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () => context.goNamed('Riverpod'),
+              child: const Text('RiverpodPage →'),
             ),
           ],
         ),

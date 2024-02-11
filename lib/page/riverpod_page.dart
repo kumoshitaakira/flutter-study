@@ -8,8 +8,12 @@ class RiverpodPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final int countAlive = ref.watch(riverpodPageControllerAliveProvider);
-    final int countNotAlive = ref.watch(riverpodPageControllerProvider);
+    final int countAlive = ref.watch(riverpodPageControllerAliveProvider(10));
+    final int countNotAlive = ref.watch(riverpodPageControllerProvider(100));
+    final riverpodPageControllerAliveNotifier =
+        ref.read(riverpodPageControllerAliveProvider(10).notifier);
+    final riverpodPageControllerNotifier =
+        ref.read(riverpodPageControllerProvider(100).notifier);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Riverpod'),
@@ -23,21 +27,17 @@ class RiverpodPage extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () => ref
-                      .read(riverpodPageControllerAliveProvider.notifier)
-                      .increment(),
+                  onPressed: () =>
+                      riverpodPageControllerAliveNotifier.increment(),
                   icon: const Icon(Icons.add),
                 ),
                 IconButton(
-                  onPressed: () => ref
-                      .read(riverpodPageControllerAliveProvider.notifier)
-                      .decrement(),
+                  onPressed: () =>
+                      riverpodPageControllerAliveNotifier.decrement(),
                   icon: const Icon(Icons.remove),
                 ),
                 TextButton(
-                  onPressed: () => ref
-                      .read(riverpodPageControllerAliveProvider.notifier)
-                      .reset(),
+                  onPressed: () => riverpodPageControllerAliveNotifier.reset(),
                   child: const Text('Reset'),
                 ),
               ],
@@ -50,20 +50,15 @@ class RiverpodPage extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () => ref
-                      .read(riverpodPageControllerProvider.notifier)
-                      .increment(),
+                  onPressed: () => riverpodPageControllerNotifier.increment(),
                   icon: const Icon(Icons.add),
                 ),
                 IconButton(
-                  onPressed: () => ref
-                      .read(riverpodPageControllerProvider.notifier)
-                      .decrement(),
+                  onPressed: () => riverpodPageControllerNotifier.decrement(),
                   icon: const Icon(Icons.remove),
                 ),
                 TextButton(
-                  onPressed: () =>
-                      ref.read(riverpodPageControllerProvider.notifier).reset(),
+                  onPressed: () => riverpodPageControllerNotifier.reset(),
                   child: const Text('Reset'),
                 ),
               ],

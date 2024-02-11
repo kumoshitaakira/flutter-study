@@ -11,7 +11,7 @@ final GlobalKey<NavigatorState> _slsPageNavigatorKey =
 final GlobalKey<NavigatorState> _rpdNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'rpdnav');
 
-final routes = GoRouter(
+final GoRouter routes = GoRouter(
   initialLocation: '/slsPage',
   navigatorKey: rootNavigatorKey,
   routes: [
@@ -41,7 +41,7 @@ final routes = GoRouter(
           navigatorKey: _rpdNavigatorKey,
           routes: [
             GoRoute(
-              path: '/prd',
+              path: '/rpd',
               name: 'Riverpod',
               builder: (context, state) => const RiverpodPage(),
             ),

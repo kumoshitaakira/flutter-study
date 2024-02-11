@@ -7,7 +7,7 @@ part 'riverpod_page_controller_alive.g.dart';
 @Riverpod(keepAlive: true)
 class RiverpodPageControllerAlive extends _$RiverpodPageControllerAlive {
   @override
-  int build() => 0;
+  int build(int value) => (value * 2);
 
   void increment() {
     state++;
