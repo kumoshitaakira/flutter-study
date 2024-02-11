@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="169159f3-996b-4608-a321-42977756f73e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bottom_tab_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bottom_tab_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/page/riverpod_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/page/riverpod_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/page/statefull_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/page/statefull_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/page/stateless_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/page/stateless_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod_page_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod_page_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod_page_controller.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod_page_controller.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod_page_controller_alive.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod_page_controller_alive.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod_page_controller_alive.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod_page_controller_alive.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes.dart" afterDir="false" />
-    </list>
+    <list default="true" id="169159f3-996b-4608-a321-42977756f73e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

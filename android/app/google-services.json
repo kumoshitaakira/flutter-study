@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1007387893146",
+    "project_id": "kumoshitatest",
+    "storage_bucket": "kumoshitatest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007387893146:android:76584aad196bb19e79ae23",
+        "android_client_info": {
+          "package_name": "com.example.demoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007387893146-fe29glk9poaqdnot7flh26cfacbjtuq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU38fqxRspOSfuAB7bGBlj0StSASjdBMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007387893146-fe29glk9poaqdnot7flh26cfacbjtuq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
