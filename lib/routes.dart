@@ -1,8 +1,10 @@
 import 'package:demoapp/bottom_tab_bar.dart';
+import 'package:demoapp/page/home_page.dart';
 import 'package:demoapp/page/riverpod_page.dart';
 import 'package:demoapp/page/start_page.dart';
 import 'package:demoapp/page/statefull_page.dart';
 import 'package:demoapp/page/stateless_page.dart';
+import 'package:demoapp/provider/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -31,7 +33,7 @@ final Provider<GoRouter> router = Provider(
               GoRoute(
                 path: '/home',
                 name: 'Home',
-                builder: (context, state) => const StatelessPage(),
+                builder: (context, state) => const HomePage(),
               ),
             ],
           ),
@@ -71,9 +73,9 @@ final Provider<GoRouter> router = Provider(
       ),
     ],
     redirect: (context, state) {
-      // if (ref.read(firebaseAuthProvider).currentUser == null) {
-      //   return state.matchedLocation == '/start' ? null : '/start';
-      // }
+      if (ref.watch(firebaseAuthProvider).currentUser == null) {
+        return state.matchedLocation == '/start' ? null : '/start';
+      }
       return null;
     },
   ),

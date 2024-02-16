@@ -30,11 +30,13 @@ class BottomTabBar extends StatelessWidget {
             label: BottomNavBarItem.home.name,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home_max),
+            icon: const Icon(Icons.description_outlined),
+            activeIcon: const Icon(Icons.description),
             label: BottomNavBarItem.sls.name,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home_max),
+            icon: const Icon(Icons.description_outlined),
+            activeIcon: const Icon(Icons.description),
             label: BottomNavBarItem.rpd.name,
           ),
         ],
