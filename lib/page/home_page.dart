@@ -8,29 +8,32 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Future<bool> logOut() async {
-      await ref.read(authControllerProvider.notifier).signOut();
-      Future.delayed(Duration.zero, () {
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            title: const Text('LogOut'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  context.goNamed('Home');
-                  Navigator.of(context).pop(true);
-                },
-                child: const Text('OK'),
-              ),
-            ],
+    Future<void> logOut() async {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-        );
-      });
-      return false;
+          title: const Text('Logout?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('No'),
+            ),
+            TextButton(
+              onPressed: () async {
+                await ref.read(authControllerProvider.notifier).signOut();
+                Future.delayed(Duration.zero, () {
+                  context.goNamed('Home');
+                  Navigator.of(context).pop();
+                });
+              },
+              child: const Text('Yes'),
+            ),
+          ],
+        ),
+      );
     }
 
     return Scaffold(

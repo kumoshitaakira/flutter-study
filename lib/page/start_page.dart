@@ -16,7 +16,7 @@ class _StartPage extends ConsumerState<StartPage> {
   String password = '';
   bool isObscure = true;
 
-  Future<bool> createAccount() async {
+  Future<void> createAccount() async {
     if (key.currentState!.validate() == true) {
       key.currentState!.save();
       final isCreated = await ref
@@ -33,11 +33,13 @@ class _StartPage extends ConsumerState<StartPage> {
             actions: [
               TextButton(
                 onPressed: () {
-                  ref
-                      .read(authControllerProvider.notifier)
-                      .sighInWithEmail(email: email, password: password);
+                  if (isCreated) {
+                    ref
+                        .read(authControllerProvider.notifier)
+                        .sighInWithEmail(email: email, password: password);
+                  }
                   context.goNamed('Home');
-                  Navigator.of(context).pop(true);
+                  Navigator.of(context).pop();
                 },
                 child: const Text('OK'),
               ),
@@ -46,7 +48,6 @@ class _StartPage extends ConsumerState<StartPage> {
         );
       });
     }
-    return false;
   }
 
   Future<bool> logIn() async {
@@ -67,7 +68,7 @@ class _StartPage extends ConsumerState<StartPage> {
               TextButton(
                 onPressed: () {
                   context.goNamed('Home');
-                  Navigator.of(context).pop(true);
+                  Navigator.of(context).pop();
                 },
                 child: const Text('OK'),
               ),
@@ -116,9 +117,7 @@ class _StartPage extends ConsumerState<StartPage> {
                       }
                       return null;
                     },
-                    onSaved: (value) => setState(() {
-                      email = value!;
-                    }),
+                    onSaved: (value) => setState(() => email = value!),
                   ),
                   const SizedBox(
                     height: 20,
@@ -134,9 +133,7 @@ class _StartPage extends ConsumerState<StartPage> {
                       hintStyle: const TextStyle(color: Colors.grey),
                       border: const OutlineInputBorder(),
                       suffixIcon: IconButton(
-                        onPressed: () => setState(() {
-                          isObscure = !isObscure;
-                        }),
+                        onPressed: () => setState(() => isObscure = !isObscure),
                         icon: Icon(!isObscure
                             ? Icons.visibility
                             : Icons.visibility_off),
@@ -151,9 +148,7 @@ class _StartPage extends ConsumerState<StartPage> {
                       }
                       return null;
                     },
-                    onSaved: (value) => setState(() {
-                      password = value!;
-                    }),
+                    onSaved: (value) => setState(() => password = value!),
                   ),
                   const SizedBox(
                     height: 30,

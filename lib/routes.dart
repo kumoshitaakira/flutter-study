@@ -74,6 +74,7 @@ final Provider<GoRouter> router = Provider(
     ],
     redirect: (context, state) {
       if (ref.watch(firebaseAuthProvider).currentUser == null) {
+        debugPrint('Not Login');
         return state.matchedLocation == '/start' ? null : '/start';
       }
       return null;
