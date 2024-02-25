@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1007387893146',
     projectId: 'kumoshitatest',
     storageBucket: 'kumoshitatest.appspot.com',
+    iosClientId: '1007387893146-cr9oco4jq77d66c2v5agd2icnlr46gav.apps.googleusercontent.com',
     iosBundleId: 'com.example.demoapp',
   );
 }
