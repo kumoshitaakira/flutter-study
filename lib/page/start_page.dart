@@ -1,4 +1,6 @@
-import 'package:demoapp/provider/auth_controller.dart';
+import 'package:demoapp/controller/account_controller.dart';
+import 'package:demoapp/controller/auth_controller.dart';
+import 'package:demoapp/provider/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -37,6 +39,15 @@ class _StartPage extends ConsumerState<StartPage> {
                     ref
                         .read(authControllerProvider.notifier)
                         .sighInWithEmail(email: email, password: password);
+                    ref.read(accountControllerProvider.notifier).createAccount(
+                          id: ref
+                                  .watch(firebaseAuthProvider)
+                                  .currentUser
+                                  ?.uid ??
+                              '',
+                          userName: 'aaaa',
+                          birthDay: DateTime.now(),
+                        );
                   }
                   context.goNamed('Home');
                   Navigator.of(context).pop();

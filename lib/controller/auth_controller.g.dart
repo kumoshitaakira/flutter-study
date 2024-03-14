@@ -6,7 +6,7 @@ part of 'auth_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authControllerHash() => r'6090234f0b3110a7587960abb47f3239d9e872cd';
+String _$authControllerHash() => r'f654b898f1e0e26444ba7beb49a9b7462582e0ae';
 
 /// See also [AuthController].
 @ProviderFor(AuthController)
@@ -17,8 +17,11 @@ final authControllerProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$authControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[firebaseAuthProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    firebaseAuthProvider,
+    ...?firebaseAuthProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$AuthController = AutoDisposeAsyncNotifier<User?>;

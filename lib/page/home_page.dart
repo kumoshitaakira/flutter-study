@@ -1,4 +1,5 @@
-import 'package:demoapp/provider/auth_controller.dart';
+import 'package:demoapp/controller/account_controller.dart';
+import 'package:demoapp/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -8,6 +9,8 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final account = ref.watch(accountControllerProvider);
+    debugPrint(account.toString());
     Future<void> logOut() async {
       showDialog(
         context: context,
